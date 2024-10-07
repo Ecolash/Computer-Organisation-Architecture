@@ -1,0 +1,39 @@
+# run 1000ns
+Time:   0ns | Clear: 1 | S: xxx | Parallel In: 1111 | Data: xxxx
+Time:   5ns | Clear: 0 | S: xxx | Parallel In: 1111 | Data: 0000
+Time:  10ns | Clear: 1 | S: xxx | Parallel In: 1111 | Data: 0000
+Time:  15ns | Clear: 1 | S: 000 | Parallel In: 1111 | Data: 0000
+Time:  25ns | Clear: 1 | S: 111 | Parallel In: 1011 | Data: 1011
+Time:  35ns | Clear: 1 | S: 000 | Parallel In: 1011 | Data: 1011
+Holding state: 1011
+Time:  45ns | Clear: 1 | S: 111 | Parallel In: 1111 | Data: 1111
+Time:  55ns | Clear: 1 | S: 001 | Parallel In: 1111 | Data: 0111
+Time:  65ns | Clear: 1 | S: 001 | Parallel In: 1111 | Data: 0011
+Time:  75ns | Clear: 1 | S: 001 | Parallel In: 1111 | Data: 0001
+Time:  85ns | Clear: 1 | S: 001 | Parallel In: 1111 | Data: 0000
+Right shift with 0: 0000
+Time:  95ns | Clear: 1 | S: 111 | Parallel In: 1111 | Data: 1111
+Time: 105ns | Clear: 1 | S: 010 | Parallel In: 1111 | Data: 1110
+Time: 115ns | Clear: 1 | S: 010 | Parallel In: 1111 | Data: 1100
+Time: 125ns | Clear: 1 | S: 010 | Parallel In: 1111 | Data: 1000
+Time: 135ns | Clear: 1 | S: 010 | Parallel In: 1111 | Data: 0000
+Left shift with 0: 0000
+Time: 145ns | Clear: 1 | S: 111 | Parallel In: 1000 | Data: 1000
+Time: 155ns | Clear: 1 | S: 011 | Parallel In: 1000 | Data: 0100
+Right rotate: 0100
+Time: 165ns | Clear: 1 | S: 111 | Parallel In: 1000 | Data: 1000
+Time: 175ns | Clear: 1 | S: 100 | Parallel In: 1000 | Data: 0001
+Left rotate: 0001
+Time: 185ns | Clear: 1 | S: 111 | Parallel In: 1000 | Data: 1000
+Time: 195ns | Clear: 1 | S: 101 | Parallel In: 1000 | Data: 1100
+Time: 205ns | Clear: 1 | S: 101 | Parallel In: 1000 | Data: 1110
+Right shift with load X: 1110
+Time: 215ns | Clear: 1 | S: 111 | Parallel In: 1000 | Data: 1000
+Time: 225ns | Clear: 1 | S: 110 | Parallel In: 1000 | Data: 0001
+Time: 235ns | Clear: 1 | S: 110 | Parallel In: 1000 | Data: 0011
+Left shift with load X: 0011
+Time: 245ns | Clear: 1 | S: 111 | Parallel In: 1000 | Data: 1000
+Time: 255ns | Clear: 1 | S: 111 | Parallel In: 0000 | Data: 1000
+Time: 265ns | Clear: 1 | S: 111 | Parallel In: 0000 | Data: 0000
+Load data from parallel input: 0000
+$finish called at time : 270 ns
