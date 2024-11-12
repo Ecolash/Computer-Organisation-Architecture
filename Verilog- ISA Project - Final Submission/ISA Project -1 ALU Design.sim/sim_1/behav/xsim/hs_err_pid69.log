@@ -1,0 +1,24 @@
+#
+# An unexpected error has occurred (6)
+#
+Stack:
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x3ee80) [0x7eaec1942e80]
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x90e14) [0x7eaec1994e14]
+/usr/lib/x86_64-linux-gnu/libc.so.6(raise+0x1e) [0x7eaec1942dce]
+/usr/lib/x86_64-linux-gnu/libc.so.6(abort+0xdf) [0x7eaec192a83f]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/Default/libstdc++.so.6(+0x8ba13) [0x7eaebf68ba13]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/Default/libstdc++.so.6(+0x91b86) [0x7eaebf691b86]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/Default/libstdc++.so.6(+0x91bc1) [0x7eaebf691bc1]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/Default/libstdc++.so.6(+0x928ff) [0x7eaebf6928ff]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(+0x359d8e) [0x7eae8cd59d8e]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(SG_Model::WaveformRender::render(SG_Model::WVDataObject const&)+0x84) [0x7eae8cd64bf4]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVWaveformPanel::WaveformTraverser::drawWaveform(SG_Model::WVDataObject const*, int, int)+0x38e) [0x7eae8cddface]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVWaveformPanel::WaveformTraverser::handleItemSize(WaveViewer::WVTreeWVObjectModel::ITraverseHandler::TraverseItem const&)+0x52) [0x7eae8cddfda2]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVTreeWVObjectModel::traverseYRange(SG_Model::WVDataObject const*, WaveViewer::WVTreeWVObjectModel::ITraverseHandler&, int, int, int&, int&) const+0x234) [0x7eae8cdc3204]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVTreeWVObjectModel::traverseYRange(SG_Model::WVDataObject const*, WaveViewer::WVTreeWVObjectModel::ITraverseHandler&, int, int, int&, int&) const+0x2be) [0x7eae8cdc328e]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVTreeWVObjectModel::traverseYRange(WaveViewer::WVTreeWVObjectModel::ITraverseHandler&, int, int) const+0x57) [0x7eae8cdc33c7]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVWaveformPanel::getGraphics(HDGDStringStream&, long&)+0x3a9) [0x7eae8cddf0c9]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WVExecutiveImp::getGraphicsDataSize()+0x9a) [0x7eae8cd9b1fa]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(WVExecutive::getGraphicsDataSize()+0xf) [0x7eae8cd9b67f]
+/home/digantam/.var/app/com.github.corna.Vivado/data/xilinx-install/Vivado/2024.1/lib/lnx64.o/librdi_wavedata.so(Java_ui_views_waveform_waveformi_WVExecutive_1getGraphicsDataSize+0x17) [0x7eae8cde78b7]
+[0x7eae6a943a80]

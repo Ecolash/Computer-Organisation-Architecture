@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Nov 12 14:56:59 2024
+# Process ID: 181453
+# Current directory: /home/tuhin/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/blk_mem_gen_0_synth_1
+# Command line: vivado -log blk_mem_gen_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_0.tcl
+# Log file: /home/tuhin/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/blk_mem_gen_0_synth_1/blk_mem_gen_0.vds
+# Journal file: /home/tuhin/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/blk_mem_gen_0_synth_1/vivado.jou
+# Running On        :tuhin-hp15s-fy5xxx
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.4 LTS
+# Processor Detail  :12th Gen Intel(R) Core(TM) i5-1240P
+# CPU Frequency     :4230.054 MHz
+# CPU Physical cores:12
+# CPU Logical cores :16
+# Host memory       :16424 MB
+# Swap memory       :0 MB
+# Total Virtual     :16424 MB
+# Available Virtual :11433 MB
+#-----------------------------------------------------------
+source blk_mem_gen_0.tcl -notrace
