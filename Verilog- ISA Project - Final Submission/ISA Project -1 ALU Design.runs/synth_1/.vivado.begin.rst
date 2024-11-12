@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="digantam" Host="diganta-hp240g8notebookpc" Pid="7687" HostCore="4" HostMemory="7795416">
-    </Process>
-</ProcessHandle>
