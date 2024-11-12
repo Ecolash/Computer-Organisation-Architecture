@@ -58,7 +58,7 @@ REG = {
     '$FO' : '1111'     # REG['$FO'] = 0xF (aliasing)
 }
 
-MULTI_OPS = {'LA':2, 'JAL':2}
+PSEUDO_OPS = {'LA':2, 'JAL':2}
 
 def to_bin(value, bits=16):
     bin_width = bits
@@ -66,34 +66,9 @@ def to_bin(value, bits=16):
     bin_value = value & mask
     return f'{bin_value:0{bin_width}b}'
 
-def parse_macros(file_lines):
-    """
-    Recognizes and strips macros of the form A = (some number) from the start of the file.
-    Returns a dictionary of macros and the remaining file lines.
-    """
-    macro_dict = {}
-    remaining_lines = []
-    macro_pattern = re.compile(r'^(\w+)\s*=\s*(\d+)\s*$')  # Regex pattern to match 'A = (number)'
-
-    for line in file_lines:
-        # Remove comments and strip leading/trailing whitespace
-        clean_line = line.split('#')[0].strip()
-        
-        # If the line matches the macro pattern, add to the dictionary
-        match = macro_pattern.match(clean_line)
-        if (match):
-            macro_name = match.group(1)
-            macro_value = int(match.group(2))
-            macro_dict[macro_name] = macro_value
-        else:
-            # Stop processing macros when we encounter a non-macro line
-            remaining_lines.append(line)
-
-    return macro_dict, remaining_lines
-
 # Parse .data section
 
-def parse_data_section(data_lines, global_address=0):
+def parse_data_section(data_lines, __GLOBAL_ADDR__ = 0):
     """Parse the .data section and return a dictionary of data labels with memory locations."""
     data_memory = {}
     data_instructions = []
@@ -111,36 +86,36 @@ def parse_data_section(data_lines, global_address=0):
 
         if data_type == '.int':
             value = int(parts[2])
-            data_memory[label] = global_address
+            data_memory[label] = __GLOBAL_ADDR__
             data_instructions.append(to_bin(value, 32))
-            global_address += 1
+            __GLOBAL_ADDR__ += 1
 
         elif data_type == '.arr':
             # Use regular expression to capture numbers inside braces, ignore spaces
             values = re.findall(r'{\s*([\d\s,]+)\s*}', line)[0]
             values = [v.strip() for v in values.split(',')]  # Strip whitespace and split by commas
-            data_memory[label] = global_address
+            data_memory[label] = __GLOBAL_ADDR__
             for value in values:
                 data_instructions.append(to_bin(int(value), 32))
-                global_address += 1
+                __GLOBAL_ADDR__ += 1
 
         elif data_type == '.char':
             value = ord(parts[2].strip("'"))
-            data_memory[label] = global_address
+            data_memory[label] = __GLOBAL_ADDR__
             data_instructions.append(to_bin(value, 32))
-            global_address += 1
+            __GLOBAL_ADDR__ += 1
 
         elif data_type == '.str':
             # Use regex to match the entire string in quotes, preserving spaces
             raw_string = re.findall(r'".*"', line)[0].strip('"')
             # Decode escape sequences like \n, \t, etc.
             string = raw_string.encode().decode('unicode_escape')
-            data_memory[label] = global_address
+            data_memory[label] = __GLOBAL_ADDR__
             for char in string:
                 data_instructions.append(to_bin(ord(char), 32))
-                global_address += 1
+                __GLOBAL_ADDR__ += 1
             data_instructions.append(to_bin(ord('\0'), 32))  # Null-terminate the string
-            global_address += 1
+            __GLOBAL_ADDR__ += 1
             
 
     return data_memory, data_instructions
@@ -165,15 +140,15 @@ def first_pass(instructions, address_counter=0):
             parts = instr.replace(',', '').split()  
             op = parts[0].upper()
             
-            if op in MULTI_OPS.keys():
-                address_counter += MULTI_OPS[op]
+            if op in PSEUDO_OPS.keys():
+                address_counter += PSEUDO_OPS[op]
             else:
                 address_counter += 1  # Increment for each instruction
 
     return labels, instruction_memory, address_counter
 
 # Second pass: Assembling instructions
-def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
+def assemble(instructions, labels, data_labels, __GLOBAL_ADDR__=0):
     machine_code = []
     
     for instr in instructions:
@@ -187,7 +162,7 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             opcode = opcodes['ALUI']
             func = ALUFunc['ADD']
             opcode = f"{opcode[:2]}{func}"
-            instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
+            instruction = f"{opcode}{rs}{rt}{imm[:18]}"
 
         elif op == 'LUI':
             opcode = opcodes['ALUI']
@@ -195,7 +170,7 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             imm = to_bin(int(parts[2]), 18) 
             func = ALUFunc[op]
             opcode = f"{opcode[:2]}{func}"
-            instruction = f"{opcode}|{rs}|{rs}|{imm[:18]}    (I-Type)"
+            instruction = f"{opcode}{rs}{rs}{imm[:18]}"
 
         elif op.endswith('I') and op[:-1] in ALUFunc:
             if op[:-1] in ['NOTI', 'INCI', 'DECI']:
@@ -208,7 +183,7 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             imm = to_bin(int(parts[3]), 18) 
             func = ALUFunc[op[:-1]]
             opcode = f"{opcode[:2]}{func}"
-            instruction = f"{opcode}|{rs}|{rs}|{imm[:18]}    (I-Type)"
+            instruction = f"{opcode}{rs}{rt}{imm[:18]}"
             
         elif op == 'NOT' or op == 'INC' or op == 'DEC' or op == 'HAM':
             opcode = opcodes['ALU']
@@ -217,7 +192,7 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             rd = REG['$0']
             func = ALUFunc[op]
             shift = '0000000000'
-            instruction = f"{opcode}|{rs}|{rt}|{rd}|{shift}|{func}  (R-Type)"
+            instruction = f"{opcode}{rs}{rt}{rd}{shift}{func}"
 
         elif op in ALUFunc:
             opcode = opcodes['ALU']
@@ -226,7 +201,7 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             rd = REG[parts[3].upper()]
             func = ALUFunc[op]
             shift = '0000000000'
-            instruction = f"{opcode}|{rs}|{rt}|{rd}|{shift}|{func}  (R-Type)"
+            instruction = f"{opcode}{rs}{rt}{rd}{shift}{func}"
 
         # LD $rs, IMM($rt) or LD $rs, IMM (implicit zero addressing)
         # ST $rs, IMM($rt) or ST $rs, IMM (implicit zero addressing)
@@ -239,33 +214,33 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             rs = REG[parts[1].upper()]
             rt = REG[rt.upper()]
             if offset in data_labels:  offset = data_labels[offset]
-            elif offset in macro_dict: offset = macro_dict[offset]
             imm = to_bin(int(offset), 18)  
-            instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
+            if (op == 'LD'): instruction = f"{opcode}{rs}{rt}{imm[:18]}"
+            else: instruction = f"{opcode}{rt}{rs}{imm[:18]}"
 
         elif op in ['BMI', 'BPL', 'BZ']:            
             label = parts[2]
             rs = REG[parts[1].upper()]
             rt = REG['$0']
             if label in labels:
-                label_address = labels[label]
-                offset = label_address - (global_address + 1)  
+                __LABEL_ADDR__ = labels[label]
+                offset = __LABEL_ADDR__ - (__GLOBAL_ADDR__ + 1)  
                
             else: raise ValueError(f"Label {label} not found.")
             imm = to_bin(offset & 0x0FFFF, 18)
             opcode = opcodes[op]
-            instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
+            instruction = f"{opcode}{rt}{rs}{imm[:18]}"
 
         elif op == 'BR':
             label = parts[1]
             if label in labels:
-                label_address = labels[label]
-                offset = label_address - (global_address + 1)
+                __LABEL_ADDR__ = labels[label]
+                offset = __LABEL_ADDR__ - (__GLOBAL_ADDR__ + 1)
 
             else: raise ValueError(f"Label {label} not found.")
             imm = to_bin(offset & 0x0FFFFFFF, 26)
             opcode = opcodes[op]
-            instruction = f"{opcode}|{imm}      (J-Type)"
+            instruction = f"{opcode}{imm}"
 
         elif op == 'MOVE':
             opcode = opcodes[op]
@@ -274,7 +249,7 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             rd = REG['$0']
             shift = '0000000000'
             func = '0010'
-            instruction = f"{opcode}|{rs}|{rt}|{rd}|{shift}|{func}  (R-Type)"
+            instruction = f"{opcode}{rs}{rt}{rd}{shift}{func}"
 
         elif op == 'CMOV':
             opcode = opcodes[op]
@@ -283,12 +258,12 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             rd = REG[parts[3].upper()]
             func = '0000'
             shift = '0000000000'
-            instruction = f"{opcode}|{rs}|{rt}|{rd}|{shift}|{func}  (R-Type)"
+            instruction = f"{opcode}{rs}{rt}{rd}{shift}{func}"
 
         elif op == 'HALT' or op == 'NOP':
             opcode = opcodes[op]
             addr = '0' * 26
-            instruction = f"{opcode}|{addr}      (J-Type)"
+            instruction = f"{opcode}{addr}"
         
         elif op == 'JAL':
             rs = REG['$RA']
@@ -297,50 +272,54 @@ def assemble(instructions, labels, data_labels, macro_dict, global_address=0):
             opcode2 = opcodes['BR']
             opcode1 = f"{opcode1[:2]}{ALUFunc['ADD']}"
 
-            imm = to_bin(global_address + 2, 18)
-            pseudoinstr = f"{opcode1}|{rs}|{rt}|{imm[:18]}    (I-Type | Pseudo JAL)"
+            imm = to_bin(__GLOBAL_ADDR__ + 2, 18)
+            pseudoinstr = f"{opcode1}{rs}{rs}{imm[:18]}"
             machine_code.append(pseudoinstr)
-            global_address += 1
+            __GLOBAL_ADDR__ += 1
             
             label = parts[1]
             if label in labels:
-                label_address = labels[label]
-                offset = label_address - (global_address + 1)  
+                __LABEL_ADDR__ = labels[label]
+                offset = __LABEL_ADDR__ - (__GLOBAL_ADDR__ + 1)  
              
             else: raise ValueError(f"Label {label} not found.")
-            imm = to_bin(offset & 0x0FFFFF, 26)
-            instruction = f"{opcode2}|{imm}      (J-Type | Pseudo JAL)"
+            imm = to_bin(offset & 0x0FFFF, 26)
+            instruction = f"{opcode2}{imm}"
+
+            
+        elif op == "JR":
+            rs1 = REG[parts[1].upper()]
+            instruction = f"{opcodes[op]}00{rs1}000"
+
+
             
         elif op == 'LA':
-            rd = REG[parts[1].upper()]
-            addr = parts[2]
-
-            if addr in data_labels: addr = data_labels[addr]
-            elif addr in macro_dict: addr = macro_dict[addr]
-            else: raise ValueError(f"Label {addr} not found.")
-        
-            imm = to_bin(int(addr), 18)
+            rt = REG['$0']
+            rs = REG[parts[1].upper()]
             opcode1 = opcodes['ALUI']
             opcode2 = opcodes['ALUI']
             opcode1 = f"{opcode1[:2]}{ALUFunc['LUI']}"
             opcode2 = f"{opcode2[:2]}{ALUFunc['OR']}"
-            
-            pseudo1 = f"{opcode1}|{rd}|{rd}|{imm[:18]}    (I-Type | Pseudo LA)"
-            pseudo2 = f"{opcode2}|{rd}|{rd}|{imm[18:]}    (I-Type | Pseudo LA)"
-            machine_code.append(pseudo1)
-            global_address += 1
-            instruction = pseudo2
-                
+
+            addr = parts[2]
+            if addr in data_labels: addr = data_labels[addr]
+            else: raise ValueError(f"Label {addr} not found.")
+    
+            imm = to_bin(int(addr), 32)
+            pseudo = f"{opcode1}{rs}{rt}00{imm[16:]}"
+            instruction = f"{opcode2}{rs}{rt}00{imm[:16]}"
+            machine_code.append(pseudo)
+            __GLOBAL_ADDR__ += 1     
+        
         else:
             print(f"Error: Unknown instruction {op}")
             exit(1)
 
         machine_code.append(instruction)
-        global_address += 1  
+        __GLOBAL_ADDR__ += 1  
 
     return machine_code
 
-# Main function: Reads from a file and assembles it
 def main():
     
     lineno = 271
@@ -350,13 +329,9 @@ def main():
         return
     
     input_file = sys.argv[1]
-    
-    # Read the input file
     with open(input_file, 'r') as f:
         assembly_program = f.readlines()
 
-    # Macro processing (if required)
-    macro_dict, assembly_program = parse_macros(assembly_program)
     
     data_section = []
     text_section = []
@@ -372,21 +347,22 @@ def main():
         if current_section is not None:
             current_section.append(line)
    
-    lables, text_section, global_address = first_pass(text_section, lineno)
-   
-    # Parse data section and get data labels and instructions
-    data_labels, data_instructions = parse_data_section(data_section, global_address)
+    lables, text_section, __GLOBAL_ADDR__ = first_pass(text_section, lineno)
+    data_labels, data_instructions = parse_data_section(data_section)
+    machine_code = assemble(text_section, lables, data_labels, lineno)
 
-    # Assemble instructions
-    machine_code = assemble(text_section, lables, data_labels, macro_dict, lineno)
-        
-    # Write instruction .coe file
-    with open(input_file.split('.')[0] + ".coe", 'w', newline='\n') as out_f:
-        out_f.write("memory_initialization_radix = 16;\n")
+
+    with open(f"{input_file.split('.')[0]}_instructions.coe", 'w', newline='\n') as out_f:
+        out_f.write("memory_initialization_radix = 2;\n")
         out_f.write("memory_initialization_vector = \n")
         for line in machine_code: out_f.write(line.upper() + ',\n')
-        for line in data_instructions: out_f.write(line.upper() + ',\n')
-        out_f.write('00000000;\n')
+        out_f.write(machine_code[-1].upper() + ';\n')
 
-if __name__ == '__main__':
-    main()
+    with open(f"{input_file.split('.')[0]}_memory.coe", 'w', newline='\n') as out_f:
+        out_f.write("memory_initialization_radix = 2;\n")
+        out_f.write("memory_initialization_vector = \n")
+        for line in data_instructions: out_f.write(line.upper() + ',\n')
+        out_f.write(data_instructions[-1].upper() + ';\n')
+
+
+if __name__ == '__main__': main()

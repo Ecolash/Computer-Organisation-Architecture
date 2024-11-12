@@ -89,6 +89,7 @@ def parse_data_section(data_lines, __GLOBAL_ADDR__ = 0):
             data_memory[label] = __GLOBAL_ADDR__
             data_instructions.append(to_bin(value, 32))
             __GLOBAL_ADDR__ += 1
+            print(__GLOBAL_ADDR__)
 
         elif data_type == '.arr':
             # Use regular expression to capture numbers inside braces, ignore spaces
@@ -98,6 +99,8 @@ def parse_data_section(data_lines, __GLOBAL_ADDR__ = 0):
             for value in values:
                 data_instructions.append(to_bin(int(value), 32))
                 __GLOBAL_ADDR__ += 1
+            print(__GLOBAL_ADDR__)
+
 
         elif data_type == '.char':
             value = ord(parts[2].strip("'"))
@@ -183,7 +186,7 @@ def assemble(instructions, labels, data_labels, __GLOBAL_ADDR__=0):
             imm = to_bin(int(parts[3]), 18) 
             func = ALUFunc[op[:-1]]
             opcode = f"{opcode[:2]}{func}"
-            instruction = f"{opcode}|{rs}|{rs}|{imm[:18]}    (I-Type)"
+            instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
             
         elif op == 'NOT' or op == 'INC' or op == 'DEC' or op == 'HAM':
             opcode = opcodes['ALU']
@@ -215,10 +218,12 @@ def assemble(instructions, labels, data_labels, __GLOBAL_ADDR__=0):
             rt = REG[rt.upper()]
             if offset in data_labels:  offset = data_labels[offset]
             imm = to_bin(int(offset), 18)  
-            instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
+            if (op == 'LD'): instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
+            else: instruction = f"{opcode}|{rt}|{rs}|{imm[:18]}    (I-Type)"
 
         elif op in ['BMI', 'BPL', 'BZ']:            
             label = parts[2]
+            print(label)
             rs = REG[parts[1].upper()]
             rt = REG['$0']
             if label in labels:
@@ -228,7 +233,7 @@ def assemble(instructions, labels, data_labels, __GLOBAL_ADDR__=0):
             else: raise ValueError(f"Label {label} not found.")
             imm = to_bin(offset & 0x0FFFF, 18)
             opcode = opcodes[op]
-            instruction = f"{opcode}|{rs}|{rt}|{imm[:18]}    (I-Type)"
+            instruction = f"{opcode}|{rt}|{rs}|{imm[:18]}    (I-Type)"
 
         elif op == 'BR':
             label = parts[1]
@@ -316,6 +321,7 @@ def assemble(instructions, labels, data_labels, __GLOBAL_ADDR__=0):
 
         machine_code.append(instruction)
         __GLOBAL_ADDR__ += 1  
+        print(__GLOBAL_ADDR__)
 
     return machine_code
 
@@ -349,17 +355,31 @@ def main():
             current_section.append(line)
    
     lables, text_section, __GLOBAL_ADDR__ = first_pass(text_section, lineno)
-   
+    print(lables)
+    print(text_section)
+    print('--------------------------')
+
     # Parse data section and get data labels and instructions
-    data_labels, data_instructions = parse_data_section(data_section, __GLOBAL_ADDR__)
+    data_labels, data_instructions = parse_data_section(data_section)
+    print('--------------------------')
 
     # Assemble instructions
     machine_code = assemble(text_section, lables, data_labels, lineno)
-        
-    with open(input_file.split('.')[0] + ".coe", 'w', newline='\n') as out_f:
-        out_f.write("memory_initialization_radix = 16;\n")
+    print('--------------------------')
+    print('====================')
+    print(data_labels)
+
+    with open(f"{input_file.split('.')[0]}_debug_inst.coe", 'w', newline='\n') as out_f:
+        out_f.write("memory_initialization_radix = 2;\n")
         out_f.write("memory_initialization_vector = \n")
         for line in machine_code: out_f.write(line.upper() + ',\n')
+        out_f.write(machine_code[-1].upper() + ';\n')
+
+    with open(f"{input_file.split('.')[0]}_debug_mem.coe", 'w', newline='\n') as out_f:
+        out_f.write("memory_initialization_radix = 2;\n")
+        out_f.write("memory_initialization_vector = \n")
         for line in data_instructions: out_f.write(line.upper() + ',\n')
+        out_f.write(data_instructions[-1].upper() + ';\n')
+
 
 if __name__ == '__main__': main()

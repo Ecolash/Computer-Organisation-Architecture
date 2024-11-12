@@ -7,7 +7,7 @@ res: .int 0 # result
 ld $1 num1 # Load num1 into Register 1
 ld $2 num2 # Load num2 into Register 2
 
-gcd_loop:
+xyz:
     li $5, 200
     lui $4, 31
     addi $4, $5, 20
@@ -36,10 +36,10 @@ gcd_loop:
     sgt $1, $1, $2
     ham $4, $5
 
-    bpl $4, gcd_loop
+    bpl $4, xyz
     bmi $5, less_than
-    bz  $6, gcd_loop
-    br gcd_loop
+    bz  $6, xyz
+    br xyz
     br less_than
     halt
     nop
@@ -54,7 +54,7 @@ gcd_loop:
 
     move $3, $2
     cmov $3, $4, $5
-    jal gcd_loop
+    jal xyz
 
     sub $c $1 $2 
     bz $c end
@@ -62,11 +62,11 @@ gcd_loop:
     sgt $c $1 $2
     bz $c less_than
     sub $1 $1 $2
-    br gcd_loop
+    br xyz
 
 less_than:
     sub $2 $2 $1
-    br gcd_loop
+    br xyz
 
 end:
     st $1 res
