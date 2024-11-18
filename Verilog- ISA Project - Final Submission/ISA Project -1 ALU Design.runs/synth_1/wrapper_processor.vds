@@ -1,0 +1,599 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Nov 11 17:11:44 2024
+# Process ID: 7729
+# Current directory: /home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1
+# Command line: vivado -log wrapper_processor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source wrapper_processor.tcl
+# Log file: /home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/wrapper_processor.vds
+# Journal file: /home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/vivado.jou
+# Running On        :diganta-hp240g8notebookpc
+# Platform          :unknown
+# Operating System  :unknown
+# Processor Detail  :11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+# CPU Frequency     :3100.310 MHz
+# CPU Physical cores:2
+# CPU Logical cores :4
+# Host memory       :7982 MB
+# Swap memory       :0 MB
+# Total Virtual     :7982 MB
+# Available Virtual :3682 MB
+#-----------------------------------------------------------
+source wrapper_processor.tcl -notrace
+Command: synth_design -top wrapper_processor -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7752
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2148.887 ; gain = 412.684 ; free physical = 121 ; free virtual = 2072
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'overlimit', assumed default net type 'wire' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:229]
+INFO: [Synth 8-11241] undeclared symbol 'overlimit', assumed default net type 'wire' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:440]
+WARNING: [Synth 8-11065] parameter 'S0' becomes localparam in 'mux_32b_4to1' with formal parameter declaration list [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:43]
+WARNING: [Synth 8-11065] parameter 'S1' becomes localparam in 'mux_32b_4to1' with formal parameter declaration list [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:43]
+WARNING: [Synth 8-11065] parameter 'S2' becomes localparam in 'mux_32b_4to1' with formal parameter declaration list [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:43]
+WARNING: [Synth 8-11065] parameter 'S3' becomes localparam in 'mux_32b_4to1' with formal parameter declaration list [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:43]
+INFO: [Synth 8-6157] synthesizing module 'wrapper_processor' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/processor_fpga_demo.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/wrapper.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/wrapper.v:2]
+INFO: [Synth 8-6157] synthesizing module 'processor_top' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/processor_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/datapath.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PIPO' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PIPO' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PC_adder' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'PC_adder' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:11]
+INFO: [Synth 8-6157] synthesizing module 'inst_mem' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Instruction_Memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/.Xil/Vivado-7729-diganta-hp240g8notebookpc/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/.Xil/Vivado-7729-diganta-hp240g8notebookpc/realtime/blk_mem_gen_0_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'blk_mem_gen_0' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Instruction_Memory.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Instruction_Memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'reg_bank' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/REG_BANK.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'reg_bank' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/REG_BANK.v:2]
+INFO: [Synth 8-6157] synthesizing module 'sign_extend_18' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extend_18' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:19]
+INFO: [Synth 8-6157] synthesizing module 'sign_extend_26' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sign_extend_26' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:25]
+INFO: [Synth 8-6157] synthesizing module 'mux_32b_2to1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'mux_32b_2to1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:31]
+INFO: [Synth 8-6157] synthesizing module 'ALU32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/ALU32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ADD32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:55]
+INFO: [Synth 8-6157] synthesizing module 'ADD8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:31]
+INFO: [Synth 8-6157] synthesizing module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'AND8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:3]
+WARNING: [Synth 8-689] width (8) of port connection 'C' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:40]
+WARNING: [Synth 8-689] width (8) of port connection 'A' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:40]
+WARNING: [Synth 8-689] width (8) of port connection 'B' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:40]
+INFO: [Synth 8-6157] synthesizing module 'XOR8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'XOR8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:80]
+INFO: [Synth 8-6157] synthesizing module 'CLA_UNIT' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'CLA_UNIT' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:16]
+INFO: [Synth 8-6157] synthesizing module 'FULLADD1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'FULLADD1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ADD8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'ADD32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:55]
+INFO: [Synth 8-6157] synthesizing module 'SUB32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:74]
+INFO: [Synth 8-6157] synthesizing module 'COMPOF2' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:67]
+INFO: [Synth 8-6157] synthesizing module 'NOT32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:70]
+INFO: [Synth 8-6157] synthesizing module 'NOT8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'NOT8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'NOT32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'COMPOF2' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'SUB32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:74]
+INFO: [Synth 8-6157] synthesizing module 'SLL32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MUX2to1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MUX2to1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'SLL32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:3]
+INFO: [Synth 8-6157] synthesizing module 'AND32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:18]
+WARNING: [Synth 8-689] width (8) of port connection 'C' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'A' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'B' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'C' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:24]
+WARNING: [Synth 8-689] width (8) of port connection 'A' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:24]
+WARNING: [Synth 8-689] width (8) of port connection 'B' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:24]
+WARNING: [Synth 8-689] width (8) of port connection 'C' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:25]
+WARNING: [Synth 8-689] width (8) of port connection 'A' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:25]
+WARNING: [Synth 8-689] width (8) of port connection 'B' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:25]
+WARNING: [Synth 8-689] width (8) of port connection 'C' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:26]
+WARNING: [Synth 8-689] width (8) of port connection 'A' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:26]
+WARNING: [Synth 8-689] width (8) of port connection 'B' does not match port width (32) of module 'AND8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'AND32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:18]
+INFO: [Synth 8-6157] synthesizing module 'OR32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:44]
+INFO: [Synth 8-6157] synthesizing module 'OR8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'OR8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'OR32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:44]
+INFO: [Synth 8-6157] synthesizing module 'SRL32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:220]
+INFO: [Synth 8-6155] done synthesizing module 'SRL32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:220]
+INFO: [Synth 8-6157] synthesizing module 'SRA32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:431]
+INFO: [Synth 8-6155] done synthesizing module 'SRA32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Shift.v:431]
+INFO: [Synth 8-6157] synthesizing module 'XOR32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'XOR32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:95]
+INFO: [Synth 8-6157] synthesizing module 'NOR32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:121]
+INFO: [Synth 8-6157] synthesizing module 'NOR8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:106]
+INFO: [Synth 8-6155] done synthesizing module 'NOR8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:106]
+INFO: [Synth 8-6155] done synthesizing module 'NOR32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Logical.v:121]
+INFO: [Synth 8-6157] synthesizing module 'INCA32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'INCA32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:80]
+INFO: [Synth 8-6157] synthesizing module 'DECA32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'DECA32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Arithmetic.v:85]
+INFO: [Synth 8-6157] synthesizing module 'SLT32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'SLT32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:103]
+INFO: [Synth 8-6157] synthesizing module 'SGT32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'SGT32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:112]
+INFO: [Synth 8-6157] synthesizing module 'LUI32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'LUI32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:99]
+INFO: [Synth 8-6157] synthesizing module 'HAM_32' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:83]
+INFO: [Synth 8-6157] synthesizing module 'HAM8' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:61]
+INFO: [Synth 8-6157] synthesizing module 'ADD2BIT' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ADD2BIT' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ADD3BIT' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'ADD3BIT' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'HAM8' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:61]
+INFO: [Synth 8-6155] done synthesizing module 'HAM_32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Comp.v:83]
+INFO: [Synth 8-6157] synthesizing module 'MUX32BIT' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:38]
+INFO: [Synth 8-6157] synthesizing module 'MUX16to1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:25]
+INFO: [Synth 8-6157] synthesizing module 'MUX4to1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'MUX4to1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'MUX16to1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'MUX32BIT' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Lib_Mux.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'ALU32' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/ALU32.v:23]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Data_Memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/.Xil/Vivado-7729-diganta-hp240g8notebookpc/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/.Xil/Vivado-7729-diganta-hp240g8notebookpc/realtime/blk_mem_gen_1_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'blk_mem_gen_1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Data_Memory.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/Data_Memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_32b_4to1' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'mux_32b_4to1' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/lib_datapath.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/datapath.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Control_Unit' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:1]
+WARNING: [Synth 8-6090] variable 'HALT' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:74]
+WARNING: [Synth 8-6090] variable 'LoadNPC' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:75]
+WARNING: [Synth 8-6090] variable 'ReadIM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:75]
+WARNING: [Synth 8-6090] variable 'LoadIR' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:75]
+WARNING: [Synth 8-6090] variable 'HALT' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:79]
+WARNING: [Synth 8-6090] variable 'LoadIR' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:80]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:85]
+WARNING: [Synth 8-6090] variable 'LoadB' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:85]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:85]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:86]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:86]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:86]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:87]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:87]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:87]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:88]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:88]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:88]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:89]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:89]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:89]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:90]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:90]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:90]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:91]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:91]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:91]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:92]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:92]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:92]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:93]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:93]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:93]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:94]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:94]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:94]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:95]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:95]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:95]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:96]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:96]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:96]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:97]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:97]
+WARNING: [Synth 8-6090] variable 'LoadB' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:97]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:97]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:98]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:98]
+WARNING: [Synth 8-6090] variable 'LoadB' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:98]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:98]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:99]
+WARNING: [Synth 8-6090] variable 'IMMsel' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:99]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:100]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:100]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:100]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:101]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:101]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:101]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:102]
+WARNING: [Synth 8-6090] variable 'ReadRP' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:102]
+WARNING: [Synth 8-6090] variable 'LoadIMM' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:102]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:103]
+WARNING: [Synth 8-6090] variable 'LoadA' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:104]
+WARNING: [Synth 8-6090] variable 'LoadB' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:104]
+WARNING: [Synth 8-6090] variable 'HALT' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:105]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:84]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:111]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:111]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:112]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:112]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:112]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:113]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:113]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:113]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:114]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:114]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:114]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:115]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:115]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:115]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:116]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:116]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:116]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:117]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:117]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:117]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:118]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:118]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:118]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:119]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:119]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:119]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:120]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:120]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:120]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:121]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:121]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:121]
+WARNING: [Synth 8-6090] variable 'ALUFunc' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:122]
+WARNING: [Synth 8-6090] variable 'MUXALU2' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:122]
+WARNING: [Synth 8-6090] variable 'LoadALUOut' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:122]
+INFO: [Common 17-14] Message 'Synth 8-6090' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-155] case statement is not full and has no default [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:110]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:145]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'Control_Unit' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'branch_control' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/branch_control.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'branch_control' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/branch_control.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'processor_top' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/processor_top.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'wrapper_processor' (0#1) [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/processor_fpga_demo.v:3]
+WARNING: [Synth 8-7129] Port addr[31] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[30] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[29] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[28] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[27] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[26] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[25] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[24] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[23] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[22] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[21] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[20] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[19] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[18] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[17] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[16] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[15] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[14] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[13] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[12] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port G[7] in module CLA_UNIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port P[7] in module CLA_UNIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[31] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[30] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[29] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[28] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[27] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[26] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[25] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[24] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[23] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[22] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[21] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[20] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[19] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[18] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[17] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[16] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[15] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[14] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[13] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[12] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[11] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[10] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[9] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C[8] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[31] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[30] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[29] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[28] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[27] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[26] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[25] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[24] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[23] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[22] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[21] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[20] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[19] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[18] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[17] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[16] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[15] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[14] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[13] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[12] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[11] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[10] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[9] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[8] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[31] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[30] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[29] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[28] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[27] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[26] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[25] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[24] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[23] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[22] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[21] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[20] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[19] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[18] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[17] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[16] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[15] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[14] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[13] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[12] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[11] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[10] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[9] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port B[8] in module AND8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[15] in module LUI32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[14] in module LUI32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[13] in module LUI32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[12] in module LUI32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[11] in module LUI32 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A[10] in module LUI32 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2246.855 ; gain = 510.652 ; free physical = 214 ; free virtual = 2056
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2261.699 ; gain = 525.496 ; free physical = 204 ; free virtual = 2047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2261.699 ; gain = 525.496 ; free physical = 204 ; free virtual = 2047
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2261.699 ; gain = 0.000 ; free physical = 202 ; free virtual = 2045
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'processor/dp/DATAMEM/data_mem_bram'
+Finished Parsing XDC File [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'processor/dp/DATAMEM/data_mem_bram'
+Parsing XDC File [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'processor/dp/INSTRMEM/inst_mem_bram'
+Finished Parsing XDC File [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'processor/dp/INSTRMEM/inst_mem_bram'
+Parsing XDC File [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/constrs_1/new/reg_and_alu.xdc]
+Finished Parsing XDC File [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/constrs_1/new/reg_and_alu.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/constrs_1/new/reg_and_alu.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/wrapper_processor_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/wrapper_processor_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2414.449 ; gain = 0.000 ; free physical = 171 ; free virtual = 2030
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2414.449 ; gain = 0.000 ; free physical = 171 ; free virtual = 2030
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 167 ; free virtual = 2028
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 167 ; free virtual = 2028
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for processor/dp/DATAMEM/data_mem_bram. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for processor/dp/INSTRMEM/inst_mem_bram. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 167 ; free virtual = 2028
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Control_Unit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      S0 |                           000001 |                              000
+                      S1 |                           000010 |                              001
+                      S2 |                           000100 |                              010
+                      S3 |                           001000 |                              011
+                      S4 |                           010000 |                              100
+                      S5 |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Control_Unit'
+WARNING: [Synth 8-327] inferring latch for variable 'WMFC_reg' [/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.srcs/sources_1/new/control_unit.v:137]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 159 ; free virtual = 2023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1120  
++---Registers : 
+	               32 Bit    Registers := 26    
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 15    
+	   4 Input   32 Bit        Muxes := 1     
+	   6 Input    4 Bit        Muxes := 1     
+	  17 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 32    
+	   4 Input    1 Bit        Muxes := 5     
+	  22 Input    1 Bit        Muxes := 10    
+	  17 Input    1 Bit        Muxes := 3     
+	   6 Input    1 Bit        Muxes := 17    
+	   5 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (processor/cu/WMFC_reg) is unused and will be removed from module wrapper_processor.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 126 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 117 ; free virtual = 1989
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 116 ; free virtual = 1990
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 116 ; free virtual = 1990
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1994
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |blk_mem_gen_1 |         1|
+|2     |blk_mem_gen_0 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |blk_mem_gen |     2|
+|3     |BUFG        |     2|
+|4     |CARRY4      |    13|
+|5     |LUT1        |     2|
+|6     |LUT2        |    19|
+|7     |LUT3        |   172|
+|8     |LUT4        |    63|
+|9     |LUT5        |   249|
+|10    |LUT6        |   956|
+|11    |MUXF7       |   177|
+|12    |MUXF8       |    66|
+|13    |FDCE        |   585|
+|14    |FDPE        |    32|
+|15    |FDRE        |   250|
+|16    |IBUF        |     6|
+|17    |OBUF        |    16|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.449 ; gain = 678.246 ; free physical = 120 ; free virtual = 1995
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 2414.449 ; gain = 525.496 ; free physical = 120 ; free virtual = 1995
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2414.457 ; gain = 678.246 ; free physical = 120 ; free virtual = 1995
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2414.457 ; gain = 0.000 ; free physical = 408 ; free virtual = 2287
+INFO: [Netlist 29-17] Analyzing 256 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2414.457 ; gain = 0.000 ; free physical = 408 ; free virtual = 2287
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 220519bc
+INFO: [Common 17-83] Releasing license: Synthesis
+126 Infos, 224 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2438.461 ; gain = 0.000 ; free physical = 408 ; free virtual = 2287
+INFO: [Common 17-1381] The checkpoint '/home/digantam/Desktop/ISA Project -1 ALU Design/ISA Project -1 ALU Design.runs/synth_1/wrapper_processor.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file wrapper_processor_utilization_synth.rpt -pb wrapper_processor_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 11 17:12:41 2024...
